@@ -12,6 +12,7 @@ public class BuildTree {
     public static void main(String[] args){
         Tree head = new Tree();
         DFSTraversing dfsTraversing = new DFSTraversing();
+        BFSTraversing bfsTraversing = new BFSTraversing();
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> str = new ArrayList<String>();
         int num = scanner.nextInt();
@@ -22,7 +23,9 @@ public class BuildTree {
             insertNode(s,head);
             System.out.println(s);
         }
-        dfsTraversing.depthFirst(head.children);
+        System.out.println("head nodename:"+head.nodename);
+        //dfsTraversing.dfs(head);
+        bfsTraversing.bfs(head);
     }
 
     /**
@@ -36,6 +39,7 @@ public class BuildTree {
         for (char c:chars){
             if(!cur.children.containsKey(c)){
                     cur.children.put(c,new Tree());
+                    cur.children.get(c).nodename = c;
                     System.out.println("向词典中加入字母："+c);
             }
             cur = cur.children.get(c);

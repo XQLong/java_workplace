@@ -9,37 +9,21 @@ import java.util.*;
 public class DFSTraversing {
     /**
      * 利用栈的先进后出特点实现深度优先遍历
-     * @param headHashMap
+     * @param head
      */
-    public void depthFirst(HashMap<Character,Tree> headHashMap){
-        Stack<HashMap<Character,Tree>> nodeStack = new Stack<HashMap<Character,Tree>>();
-        HashMap<Character,Tree> node = headHashMap;
-        nodeStack.push(node);
-        while (!nodeStack.isEmpty()){
-            node = nodeStack.pop();
-            ArrayList<HashMap<Character,Tree>> children = getChildren(node);
+    public void dfs(Tree head){
+        Stack<Tree> stack = new Stack<Tree>();
+        Pubfun pubfun = new Pubfun();
+        stack.push(head);
+        while (!stack.isEmpty()){
+            Tree node = stack.pop();
+            System.out.println(node.nodename);
+            ArrayList<Tree> children = pubfun.getchildrenNode(node);
             if(children!=null&&!children.isEmpty()){
-                System.out.println(node.keySet());
-                for (HashMap child:children){
-                    nodeStack.push(child);
+                for (Tree t:children){
+                    stack.push(t);
                 }
             }
         }
-    }
-
-    /**
-     * 获取该节点的子节点
-     * @param node
-     * @return
-     */
-    private ArrayList<HashMap<Character,Tree>> getChildren(HashMap<Character, Tree> node) {
-        HashMap<Character,Tree> parent = node;
-        Set<Character> set = node.keySet();
-        ArrayList<HashMap<Character,Tree> >  children = new ArrayList<HashMap<Character, Tree>>() ;
-        for (Character c:set){
-            HashMap<Character,Tree> child = parent.get(c).children;
-            children.add(child);
-        }
-        return children;
     }
 }

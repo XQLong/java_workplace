@@ -51,8 +51,10 @@ public class Next {
            return len;
        }*/
     public static void main(String[] args){
-        String s = "sssss";
-        int slen = s.length();
+        String s = "adabc";
+        KMPSolution kmpSolution = new KMPSolution();
+        kmpSolution.getNext(s);
+        /*int slen = s.length();
         int[] next =new int[slen];
         next[0] = 0;
         int ind = 0;//当前比较的位置
@@ -69,6 +71,6 @@ public class Next {
                 next[i] = 0;
             }
             ind = next[i];
-        }
+        }*/
     }
 }

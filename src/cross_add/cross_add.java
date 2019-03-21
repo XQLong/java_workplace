@@ -29,9 +29,8 @@ public class cross_add {
         String num = String.valueOf(a);
         char[] c = num.toCharArray();
         for (int i=0;i<c.length;i++){
-            double par = Math.pow(-1,i);
             int d = c[i]-'0';
-            ans += par*d;
+            ans += Math.pow(-1,i)*d;
         }
         return (new Double(ans).intValue());
     }

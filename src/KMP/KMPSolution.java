@@ -1,66 +1,63 @@
 package KMP;
 
+import java.io.*;
 import java.util.*;
 
-/**
- * Created by Administrator on 2018/9/19.
- */
 public class KMPSolution {
-    public static void main(String[] args){
-        Scanner sca = new Scanner(System.in);
-        Fun fun = new Fun();
-        int size = sca.nextInt();
-        for(int i=0;i<size;i++){
-            String partStr = sca.next();
-            String searchStr = sca.next();
-            int[] pmt = fun.getNext(partStr);
-            System.out.println(fun.matchPart(searchStr,partStr,pmt));
+
+
+    public int[] getNext(String pattern) {
+        int i = 0;
+        int j = -1;
+        int[] next = new int[pattern.length() + 1];//next数组长度比pattern多1位
+        next[0] = -1;
+
+        while (i < pattern.length()) {
+            if (j == -1 || pattern.charAt(i) == pattern.charAt(j)) {
+                next[++i] = ++j;
+            } else {
+                j = next[j];
+            }
         }
+        return next;
     }
-    public static class Fun {
-        public int[] getNext(String model){
-            String s = model;
-            int slen = s.length();
-            int[] next =new int[slen];
-            next[0] = 0;
-            int ind = 0;//当前比较的位置
-            int len = 0;
-            for(int i = 1;i<slen;i++){
-                while (s.charAt(i)!=s.charAt(ind)&&ind>0){
-                    ind = next[ind];
-                    len = 0;
-                }
-                if(s.charAt(i)==s.charAt(ind)){
-                    len += 1;
-                    next[i] = len;
-                }else {
-                    next[i] = 0;
-                }
-                ind = next[i];
-            }
-            return next;
-        }
-        public int matchPart(String searchStr, String modelStr,int[] pmt) {
-            int searchSize = searchStr.length()-1;
-            int modelSize = modelStr.length()-1;
-            int matchNum = 0;
-            int j = 0;
-            int i=0;
-            while (i<=searchSize){
-                char c1 = searchStr.charAt(i);
-                char c2 = modelStr.charAt(j);
-                if(c1==c2){
-                    if(j == modelSize){
-                        matchNum++;
-                        j = pmt[j]-1;
-                    }
-                    j++;
-                }else {
-                    j = pmt[j];
-                }
+
+    public int sameSnippet(String pattern,String source) {
+
+        int i = 0;
+        int j = 0;
+        int[] next = getNext(pattern);
+        int count = 0;
+        while (i < source.length()) {
+            if (j == -1 || source.charAt(i) == pattern.charAt(j)) {
                 i++;
+                j++;
+            } else {
+                j = next[j];
             }
-            return matchNum;
+
+            if (j >= pattern.length()) {
+                count++;
+                j = next[j];//回溯
+            }
+        }
+        return count;
+    }
+    public static void main(String[] args) throws IOException {
+        KMPSolution h = new KMPSolution();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int arrSize = Integer.parseInt(br.readLine());
+        int i = 0;
+        List<Integer> counts = new ArrayList<Integer>(arrSize);
+        while(i<arrSize){
+            String pattern = br.readLine();
+            String source = br.readLine();
+            counts.add(h.sameSnippet(pattern,source));
+            i++;
+        }
+
+        for(int c : counts){
+            System.out.println(c);
         }
     }
 }

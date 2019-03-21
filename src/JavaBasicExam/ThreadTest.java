@@ -3,7 +3,7 @@ package JavaBasicExam;
 /**
  * Created by xql on 2019/3/5.
  */
-public class TreadTest extends Thread{
+public class ThreadTest extends Thread{
     private int i;
 
     @Override
@@ -17,8 +17,8 @@ public class TreadTest extends Thread{
         for(int i=0;i<100;i++){
             System.out.println(currentThread()+" "+i);
             if(i==20){
-                new TreadTest().start();
-                new TreadTest().start();
+                new ThreadTest().start();
+                new ThreadTest().start();
             }
         }
     }

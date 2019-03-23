@@ -32,4 +32,22 @@ public class PrintListFromT2H {
         }
         return ret;
     }
+
+    /*使用头插法构造逆序链表*/
+    public ArrayList<Integer> printListFromTailToHead3(ListNode listNode) {
+        ArrayList<Integer> ret = new ArrayList<>();
+        ListNode head = new ListNode(0);
+        while (listNode!=null){
+            ListNode temp = listNode.next;
+            listNode.next = head.next;
+            head.next = listNode;
+            listNode = temp;
+        }
+        head =head.next;
+        while (head!=null){
+            ret.add(head.val);
+            head = head.next;
+        }
+        return ret;
+    }
 }

@@ -10,4 +10,7 @@ public class TreeNode {
     public TreeNode(int x){
         this.val = x;
     }
+    public void printval(){
+        System.out.println(this.val);
+    }
 }

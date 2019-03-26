@@ -27,4 +27,35 @@ public class Fibonacci {
         }
         return res;
     }
+    //青蛙跳台阶问题
+    public int fibonacci2(int n) {
+        if(n<=2) return n;
+        int pre2 = 1;
+        int pre1 = 2;
+        int res = 0;
+        for(int i=3;i<=n;i++){
+            res = pre2 + pre1;
+            pre2 = pre1;
+            pre1 = res;
+        }
+        return res;
+    }
+    //变态青蛙跳台阶问题
+    public int fibonacci3(int n) {
+        if (n<=2) return n;
+        int[] arr = new int[n+1];
+        arr[1] = 1;
+        arr[2] = 2;
+        for(int i = 3;i<=n;i++){
+            int j = 1;
+            while (i-j>0)
+            {
+                arr[i] += arr[i-j];
+                j++;
+            }
+            arr[i]++;
+        }
+        return arr[n];
+    }
+
 }

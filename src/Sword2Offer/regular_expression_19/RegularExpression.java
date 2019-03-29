@@ -11,7 +11,6 @@ public class RegularExpression {
     public boolean matchpattern(char[] str, char[] pattren, int indstr, int indpattern) {
         int ls = str.length - 1;
         int lp = pattren.length - 1;
-        if(lp<0) return false;
         if(indstr==(ls+1)&&indpattern==(lp+1)) return true;
         if(indpattern>lp) return false;
         if(indstr<=ls&&indpattern<=lp){

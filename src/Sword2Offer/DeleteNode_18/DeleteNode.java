@@ -29,7 +29,7 @@ public class DeleteNode {
     public ListNode deleterepeatnode(ListNode pHead){
         if (pHead==null||pHead.next==null) return pHead;
         ListNode next = pHead.next;
-        if(pHead.val == next.val){
+        if(pHead.val==next.val){
             while (next!=null&&pHead.val==next.val){
                 next = next.next;
             }

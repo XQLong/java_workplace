@@ -6,6 +6,7 @@ import Sword2Offer.TestInstance.RandomListNode;
  * Created by xql on 2019/5/5.
  */
 public class RandomLinkListCopy {
+    // 使用递归
     public RandomListNode Clone(RandomListNode pHead)
     {
         RandomListNode copynode = ResertCopyNode(pHead,null);
@@ -43,5 +44,41 @@ public class RandomLinkListCopy {
         pHead.next = next;
         copy.next = next==null?null:next.next;
         return SplitRandomNode(next,res);
+    }
+
+    //使用迭代
+    public RandomListNode Clone1(RandomListNode pHead)
+    {
+        if(pHead==null) return pHead;
+        RandomListNode cur = pHead;
+        // 复制节点并插入
+        while (cur!=null){
+            RandomListNode next = cur.next;
+            RandomListNode newnode = new RandomListNode(cur.label);
+            cur.next = newnode;
+            newnode.next = next;
+            cur = next;
+        }
+
+        // 为复制的节点的random赋值
+        cur = pHead;
+        while (cur!=null){
+            RandomListNode copy = cur.next;
+            RandomListNode next = copy.next;
+            copy.random = cur.random==null?null:cur.random.next;
+            cur = next;
+        }
+
+        // 对链表进行拆分
+        cur = pHead;
+        RandomListNode res = pHead.next;
+        while (cur!=null){
+            RandomListNode copy = cur.next;
+            RandomListNode next = copy.next;
+            cur.next = next;
+            copy.next = next==null?null:next.next;
+            cur = next;
+        }
+        return res;
     }
 }

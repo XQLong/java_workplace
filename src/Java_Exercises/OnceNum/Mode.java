@@ -1,4 +1,4 @@
-package OnceNum;
+package Java_Exercises.OnceNum;
 
 import java.util.Arrays;
 

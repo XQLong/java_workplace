@@ -1,7 +1,6 @@
-package KMP;
+package Java_Exercises.KMP;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Administrator on 2018/9/18.

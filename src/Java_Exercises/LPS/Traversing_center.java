@@ -1,4 +1,4 @@
-package LPS;
+package Java_Exercises.LPS;
 
 import java.util.Scanner;
 

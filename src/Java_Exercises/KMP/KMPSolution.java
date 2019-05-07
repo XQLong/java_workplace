@@ -1,4 +1,4 @@
-package KMP;
+package Java_Exercises.KMP;
 
 import java.io.*;
 import java.util.*;

@@ -1,6 +1,4 @@
-package matchstick;
-
-import java.util.Arrays;
+package Java_Exercises.matchstick;
 
 /**
  * Created by xql on 2019/2/26.

@@ -1,6 +1,5 @@
-package KMP;
+package Java_Exercises.KMP;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**

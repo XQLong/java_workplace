@@ -1,4 +1,4 @@
-package Trie_Tree;
+package Java_Exercises.Trie_Tree;
 import java.util.*;
 public class Solution{
     public static class Tree{

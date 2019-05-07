@@ -1,4 +1,4 @@
-package traversing_tree;
+package Java_Exercises.traversing_tree;
 
 import java.util.*;
 

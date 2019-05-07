@@ -1,4 +1,4 @@
-package Trie_Tree;
+package Java_Exercises.Trie_Tree;
 
 /**
  * Created by Administrator on 2018/9/14.

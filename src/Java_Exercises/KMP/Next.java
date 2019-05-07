@@ -1,4 +1,4 @@
-package KMP;
+package Java_Exercises.KMP;
 
 /**
  * Created by xql on 2018/9/19.

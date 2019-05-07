@@ -1,9 +1,8 @@
-package traversing_tree;
+package Java_Exercises.traversing_tree;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
-import java.util.HashMap;
 
 /**
  * Created by xql on 2018/9/15.

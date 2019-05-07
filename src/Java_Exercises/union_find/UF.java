@@ -1,6 +1,5 @@
-package union_find;
+package Java_Exercises.union_find;
 
-import java.io.BufferedReader;
 import java.util.Scanner;
 
 /**

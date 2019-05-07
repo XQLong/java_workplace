@@ -1,4 +1,4 @@
-package LIFO;
+package Java_Exercises.LIFO;
 
 import java.util.Iterator;
 

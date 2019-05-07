@@ -1,9 +1,8 @@
-package cross_add;
+package Java_Exercises.cross_add;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.Buffer;
 
 /**
  * Created by xql on 2018/11/19.

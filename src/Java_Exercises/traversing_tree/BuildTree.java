@@ -1,8 +1,6 @@
-package traversing_tree;
+package Java_Exercises.traversing_tree;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 /**

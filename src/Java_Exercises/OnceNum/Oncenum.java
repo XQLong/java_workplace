@@ -1,4 +1,4 @@
-package OnceNum;
+package Java_Exercises.OnceNum;
 
 /**
  * Created by xql on 2019/2/27.

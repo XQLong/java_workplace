@@ -1,4 +1,4 @@
-package JavaBasicExam;
+package Java_Thread;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

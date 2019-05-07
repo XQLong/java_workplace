@@ -1,4 +1,4 @@
-package JavaBasicExam;
+package Java_Thread;
 
 /**
  * Created by xql on 2019/3/6.

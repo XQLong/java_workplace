@@ -32,3 +32,22 @@
     ````
     
     算法时间复杂度为O（n*n）。
+    
+- quick union算法
+    <div>
+        <img src="https://github.com/XQLong/java_workplace/blob/master/src/Algorithms/pics/quickunion_datastructure.png"></img>
+    </div>
+    定义数据结构，如图所示。使用整型数组的索引来代表数据，数组的值表示数据的父节点，当数据的索引值即为数组值时
+    则该节点为根节点。当节点具有相同的根节点时，表示数据间具有连通性。
+    
+    算法主要函数（步骤）：
+    ````
+    Find:检查p和q是否具有连通性（是否具有相同的根节点）
+    Union：将p和q归并到相同的分量中（将p的根节点设置为q的根节点）
+    ````
+    <div>
+        <img src="https://github.com/XQLong/java_workplace/blob/master/src/Algorithms/pics/quick_union.png"></img>
+    </div>
+    
+    算法的时间复杂度为O(N)。
+    

@@ -75,4 +75,52 @@ public class UF {
         Quick_Union qu = new Quick_Union(N);
         return qu;
     }
+    /*********************quick union 算法改进******************************************************************/
+    public class Quick_Union_Pro{
+        private int[] id;   //分量id（以触点为索引）
+        private int count;  //分量数量
+        protected int[] weight;   //节点权重
+        public Quick_Union_Pro(int N){
+            //初始化分量id数组
+            count = N;
+            id = new int[N];
+            weight = new int[N];
+            for (int i=0;i<N;i++){
+                weight[i] = 1;
+                id[i] = i;
+            }
+        }
+        public int count(){
+            return count;
+        }
+        //搜寻节点的根节点
+        public int root(int i){
+            int node = i;
+            while (node!=id[node])   node=id[node];
+            /*改进2：路径压缩，在搜寻root时将该节点指向root*/
+            // id[i] = node;
+            return node;
+        }
+        //对p节点和节点q进行带权归并
+        public void union(int p,int q){
+            int rootp = root(p);
+            int rootq = root(q);
+            if(weight[p]>weight[q]){
+                id[rootq] = rootp;
+                weight[rootp] += weight[rootq];
+            }else {
+                id[rootp] = rootq;
+                weight[rootq] += weight[rootp];
+            }
+            count--;
+        }
+        //
+        public boolean connected(int p,int q){
+            return root(p) == root(q);
+        }
+    }
+    public Quick_Union_Pro quick_union_pro(int N){
+        Quick_Union_Pro qup = new Quick_Union_Pro(N);
+        return qup;
+    }
 }

@@ -1,22 +1,47 @@
 package Algorithms.union_find;
 
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  * Created by xql on 2019/5/13.
  */
 public class Test {
-    public static void main(String[] args){
-        Scanner reader = new Scanner(System.in);
-        int N = reader.nextInt();
-        UF uf = new UF(N);
-        while(reader.hasNextInt()){
-            int p = reader.nextInt();
-            int q = reader.nextInt();
-            System.out.println(p+" "+q);
-            if(uf.connected(p,q)) continue;
-            uf.union(p,q);
+    //读取数据
+    public ArrayList<int[]> readtxt () throws IOException {
+        String dir = "E:\\java_workplace\\java_workplace\\src\\Algorithms\\union_find\\input.txt";
+        FileInputStream file = new FileInputStream(dir);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file));
+        ArrayList<int[]> ret =new ArrayList<>();
+        String str = null;
+        while ((str = bufferedReader.readLine())!=null){
+            String[] strings = str.split(" ");
+            int len = strings.length;
+            int[] datas = new int[len];
+            for(int i=0;i<len;i++){
+                datas[i] = Integer.valueOf(strings[i]);
+            }
+            ret.add(datas);
         }
-        System.out.println(uf.count()+"components");
+        file.close();
+        bufferedReader.close();
+        return ret;
+    }
+    public static void main(String[] args) throws IOException {
+        Test test = new Test();
+        ArrayList<int[]> arrayList = test.readtxt();
+        int N = arrayList.get(0)[0];
+        UF uf = new UF();
+        UF.Quick_Find qf = uf.quick_find(N);
+        UF.Quick_Union qu = uf.quick_union(N);
+        for(int i=1;i<arrayList.size();i++){
+            int p = arrayList.get(i)[0];
+            int q = arrayList.get(i)[1];
+            System.out.println(p+" "+q);
+            if(qu.connected(p,q)) continue;
+            qu.union(p,q);
+        }
+        System.out.println(qu.count()+"components");
     }
 }

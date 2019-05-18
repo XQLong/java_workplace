@@ -1,12 +1,13 @@
-package Java_Exercises.LIFO;
+package Algorithms.Stack;
 
 import java.util.Iterator;
 
 /**
  * Created by xql on 2018/11/30.
  */
-public class ResizingArrayStack<Item> implements Iterable<Item> {
 
+//使用动态调整数组大小的实现栈
+public class ResizingArrayStack<Item> implements Iterable<Item> {
     private Item[] a = (Item[]) new Object[1]; //栈元素
     private int N = 0;
     public boolean isEmpty(){   return N==0;}

@@ -99,4 +99,27 @@ public class SortMethod {
             else temp[j] = input[p1++];
         }
     }
+    //从底至上的归并排序
+    public Comparable[] bottom_up_mergeSort(Comparable[] input) {
+        int l = input.length;
+        temp = new Comparable[l];
+        for(int i=0;i<l;i++) temp[i] = input[i];
+        return bottom_up(input);
+    }
+    public Comparable[] bottom_up(Comparable[] input) {
+        int l = input.length;
+        int size = 2;
+        while (size/2<=l){
+            for (int i=0;i<l;i = i+size){
+                if(i+size<=l){
+                    merge(input,i,(2*i+size-1)/2,(i+size-1));
+                }else {
+                    merge(input,i,(2*i+size-1)/2,l-1);
+                }
+                for(int j=0;j<l;j++) input[j] = temp[j];
+            }
+            size *= 2;
+        }
+        return input;
+    }
 }

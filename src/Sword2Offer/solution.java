@@ -1,14 +1,16 @@
 package Sword2Offer;
 
+import Sword2Offer.ArrayOfStackPushAndPop_31.ArrayOfStackPushAndPop;
+import Sword2Offer.BinarySearchTreePostTraversal_33.SearchTreePostTraversal;
+import Sword2Offer.BinaryTreePrint_32.BinaryTreePrint;
+import Sword2Offer.MoreThanHalfNum_39.MoreThanHalfNum;
+import Sword2Offer.PrintCharDictionary_38.PrintCharDictionary;
+import Sword2Offer.RandomlinkListCopy_35.RandomLinkListCopy;
+import Sword2Offer.SerializeTreeNode_37.SerializeTreeNode;
+import Sword2Offer.TestInstance.RandomListNode;
 import Sword2Offer.TestInstance.TreeNode;
-import Sword2Offer.cutrope_14.CutRope;
-import Sword2Offer.integer_power_16.IntegerPower;
-import Sword2Offer.minNumberInRotateArray_11.MinNumberInRotateArray;
-import Sword2Offer.numberofone_15.NumberOfOne;
-import Sword2Offer.pathInmatrix_12.PathInMatrix;
-import Sword2Offer.regular_expression_19.RegularExpression;
-import Sword2Offer.robotmoverange_13.RobotMoveRange;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 /**
@@ -123,6 +125,187 @@ public class solution {
         //16
         /*IntegerPower integerPower = new IntegerPower();
         System.out.println(integerPower.Power(2,-3));*/
+
+        //17
+        /*Print1ToN print1ToN = new Print1ToN();
+        print1ToN.print1ToN(3);*/
+
+        //18
+        /*ListNode head = new ListNode(1);
+        ListNode node0 = new ListNode(1);
+        ListNode node1 = new ListNode(2);
+        ListNode node2 = new ListNode(1);
+        ListNode node3 = new ListNode(2);
+        ListNode node4 = new ListNode(1);
+        ListNode node5 = new ListNode(1);
+        head.addnode(node0);
+        head.addnode(node1);
+        head.addnode(node2);
+        head.addnode(node3);
+        head.addnode(node4);
+        head.addnode(node5);
+        DeleteNode dn = new DeleteNode();
+        ListNode res = dn.deleterepeatnode(head);
+        while (res!=null&&res.next!=null){
+            res.printnode();
+            res = res.next;
+        }*/
+
+        //20
+        /*String s = "-E-16";
+        char[] arr = s.toCharArray();
+        StringPresentNumber spn = new StringPresentNumber();
+        System.out.println(spn.isNumeric(arr));*/
+
+        //21
+        /*int[] arr = {1,2,3,4,5};
+        ChangeOddEvenOrder co = new ChangeOddEvenOrder();
+        co.reOrderArray1(arr);*/
+
+        //22
+        /*ListNode head = new ListNode(1);
+        ListNode node0 = new ListNode(1);
+        ListNode node1 = new ListNode(2);
+        ListNode node2 = new ListNode(1);
+        ListNode node3 = new ListNode(2);
+        ListNode node4 = new ListNode(1);
+        ListNode node5 = new ListNode(1);
+        head.addnode(node0);
+        head.addnode(node1);
+        head.addnode(node2);
+        head.addnode(node3);
+        head.addnode(node4);
+        head.addnode(node5);
+        InverseKNode inv = new InverseKNode();
+        System.out.println(inv.FindKthToTail(head,3).val);*/
+
+        //23
+        /*ListNode head = new ListNode(1);
+        ListNode node0 = new ListNode(2);
+        ListNode node1 = new ListNode(3);
+        ListNode node2 = new ListNode(4);
+        ListNode node3 = new ListNode(5);
+        head.addnode(node0);
+        head.addnode(node1);
+        head.addnode(node2);
+        head.addnode(node3);
+        node3.next = node0;
+        EntranceOfLoop entranceOfLoop = new EntranceOfLoop();
+        entranceOfLoop.EntryNodeOfLoop(head);*/
+
+        //24 & 25
+        /*ListNode head = new ListNode(1);
+        ListNode node0 = new ListNode(3);
+        ListNode node1 = new ListNode(5);
+        ListNode node2 = new ListNode(7);
+        ListNode node3 = new ListNode(9);
+        head.addnode(node0);
+        head.addnode(node1);
+        head.addnode(node2);
+        head.addnode(node3);
+        ListNode head_ = new ListNode(2);
+        ListNode node0_ = new ListNode(4);
+        ListNode node1_ = new ListNode(6);
+        ListNode node2_ = new ListNode(8);
+        ListNode node3_ = new ListNode(10);
+        head_.addnode(node0_);
+        head_.addnode(node1_);
+        head_.addnode(node2_);
+        head_.addnode(node3_);*/
+        // ReverseLinkList reverseLinkList = new ReverseLinkList();
+        // ListNode listNode = reverseLinkList.ReverseList(head);
+        /*MergeLinkList mergeLinkList = new MergeLinkList();
+        ListNode listNode = mergeLinkList.Merge1(head,head_);
+        while (listNode!=null){
+            listNode.printnode();
+            listNode = listNode.next;
+        }*/
+
+        // 28
+       /* TreeNode root = new TreeNode(8);
+        TreeNode left = new TreeNode(6);
+        TreeNode right = new TreeNode(6);
+        TreeNode left1 = new TreeNode(5);
+        TreeNode right1 = new TreeNode(5);
+        TreeNode left2 = new TreeNode(7);
+        TreeNode right2 = new TreeNode(7);
+        root.left =  left;
+        root.right = right;
+        left.left = left1;
+        left.right = right1;
+        left1.left = left2;
+        left1.right = right2;
+        TreeSymmetrical treeSymmetrical = new TreeSymmetrical();
+        System.out.println(treeSymmetrical.isSymmetrical(root));*/
+
+       // 29
+       /* int[][] arr = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+        ArrayPrintClosewise apc = new ArrayPrintClosewise();
+        apc.printMatrix(arr);*/
+
+       // 31
+       /*int[] arr1 = {1,2,3,4,5};
+       int[] arr2 = {4,5,3,2,1};
+       ArrayOfStackPushAndPop aosp = new ArrayOfStackPushAndPop();
+       System.out.println(aosp.IsPopOrder(arr1,arr2));*/
+
+       // 32
+        /*TreeNode root = new TreeNode(0);
+        TreeNode left = new TreeNode(-1);
+        TreeNode right = new TreeNode(1);
+        root.left = left;
+        root.right = right;
+        BinaryTreePrint btp = new BinaryTreePrint();
+        // btp.PrintFromTopToBottom(null);
+        btp.PrintTreeNodeN(root);*/
+
+        // 33
+        /*int[] arr = {5,4,3,2,1};
+        SearchTreePostTraversal stpt = new SearchTreePostTraversal();
+        stpt.VerifySquenceOfBST(arr);*/
+
+        //35
+        /*RandomListNode head = new RandomListNode(0);
+        RandomListNode n1 = new RandomListNode(1);
+        RandomListNode n2 = new RandomListNode(2);
+        RandomListNode n3 = new RandomListNode(3);
+        head.next = n1;
+        n1.next = n2;
+        n2.next = n3;
+        head.random = n3;
+        n1.random = n3;
+        n2.random = head;
+        n3.random = n1;
+        RandomLinkListCopy rnc = new RandomLinkListCopy();
+        rnc.Clone1(head);*/
+
+        //37
+        /*TreeNode root = new TreeNode(5);
+        TreeNode left = new TreeNode(4);
+        TreeNode left1 = new TreeNode(3);
+        TreeNode left2 = new TreeNode(2);
+        root.left = left;
+        left.left = left1;
+        left1.left = left2;
+        SerializeTreeNode stn = new SerializeTreeNode();
+        //String str = stn.Serialize(root);
+        //TreeNode t = stn.Deserialize(str);
+        // stn.preTraverse1(root);
+        // String str = "1-2-4-#-#-5-#-#-3-#-#-";
+        stn.Serialize1(root);
+        System.out.println(stn.res1);
+        stn.Deserialize1(stn.res1);
+        System.out.println(stn.ret.val);*/
+
+        //38
+        /*PrintCharDictionary pcd  =new PrintCharDictionary();
+        // pcd.Permutation("abc");
+        ArrayList<String> list = pcd.Permutation1("abb");
+        System.out.println(list);*/
+
+        //39
+        MoreThanHalfNum mfn = new MoreThanHalfNum();
+        mfn.MoreThanHalfNum_Solution1(new int[]{2,2,2,2,2,1,3,4,5});
     }
         //7
         public Stack<TreeNode> addTreeNode(Stack<TreeNode> stack,TreeNode t){

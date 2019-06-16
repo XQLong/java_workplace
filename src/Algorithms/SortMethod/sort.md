@@ -41,4 +41,16 @@
   ````
   1、从下至上的归并排序时间复杂度为logN，而每一轮需要进行N次比较因此总复杂度为NlogN。
   ```` 
+
+- 快速排序
+  快速排序是一种分而治之的分类方法。它的工作原理是将一个数组分成两部分，然后独立地对这部分进行排序。
+  <div>
+        <img src="https://github.com/XQLong/java_workplace/blob/master/src/Algorithms/pics/quicksort-overview.png"></img>
+  </div>
+  我们通过分区实现完整的排序，然后递归地将该方法应用于子阵列。
+ 
+  ````
+  1、对长度为N的阵列进行快速排序平均需要2NlnN次比较；
+  2、快速排序最坏的情况下需N^2/2次比较（长度为N），使用随机洗牌可以避免这种情况。
+  ````
     

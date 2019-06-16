@@ -122,4 +122,50 @@ public class SortMethod {
         }
         return input;
     }
+    //利用插入排序的思想进行洗牌
+    public Comparable[] shuffle(Comparable[] input){
+        int l = input.length;
+        for(int i=0;i<l;i++){
+            //在[0,i]之间随机产生一个整数
+            int ind = (int)(Math.random()*(i+1));
+            if(ind!=i) {
+                input = swap(input,i,ind);
+             }
+        }
+        return input;
+    }
+    //快速排序
+    public Comparable[] quickSort(Comparable[] input){
+        int l = input.length;
+        temp = new Comparable[l];
+        for(int i=0;i<l;i++) temp[i] = input[i];
+        dividePatition(0,l-1);
+        return temp;
+    }
+    public void dividePatition(int i,int j){
+        if(i>=j) return;
+        int mid = partition(i,j);
+        dividePatition(i,mid-1);
+        dividePatition(mid+1,j);
+    }
+    public int partition(int i,int j){
+        int len = temp.length;
+        if(i>=j||i<0||j>=len) return 0;
+        Comparable a0 = temp[i];
+        int l = i+1,r = j;
+        while (r-l>= 0){
+            while (temp[l].compareTo(a0)==-1&&l<=j) l++;
+            while (temp[r].compareTo(a0)>-1&&r>i) r--;
+            if(r-l<1){
+                break;
+            }else {
+                temp = swap(temp,l,r);
+                l++;
+                r--;
+            }
+        }
+        temp =swap(temp,i,r);
+        return r;
+    }
+
 }

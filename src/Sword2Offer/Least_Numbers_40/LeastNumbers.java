@@ -1,6 +1,7 @@
 package Sword2Offer.Least_Numbers_40;
 
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 public class LeastNumbers {
     int [] temp;
@@ -46,5 +47,23 @@ public class LeastNumbers {
         input[i] = input[j];
         input[j] = t;
         return input;
+    }
+
+    //使用大顶堆维护一个大小为k的小顶堆
+    public ArrayList<Integer> GetLeastNumbers_Solution1(int [] input, int k) {
+        int len = input.length;
+        ArrayList res = new ArrayList<>();
+        if(k<=0||len<=0||len<k) return res;
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2 - o1);
+        for(int i=0;i<len;i++){
+            maxHeap.offer(input[i]);
+            if(maxHeap.size()>k){
+                maxHeap.poll();
+            }
+        }
+        while (maxHeap.size()>0){
+            res.add(maxHeap.poll());
+        }
+        return res;
     }
 }

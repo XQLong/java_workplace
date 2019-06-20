@@ -20,7 +20,7 @@
 - 从右至左（从底至上）使用动态规划：
 
     <div align="center">
-         <img src="https://github.com/XQLong/java_workplace/blob/master/img/DecodeNumbers1.png"></img>
+         <img src="https://github.com/XQLong/java_workplace/blob/master/img/DecodeNumbers2.png"></img>
     </div> 
     
   由上图推导得出相应的公式，进行计算。此处需注意的是当数字中出现`“0”`的情况考虑。

@@ -78,7 +78,6 @@ public class SortMethod {
     public Comparable[] mergeSort(Comparable[] input) {
         int l = input.length;
         temp = new Comparable[l];
-        for(int i=0;i<l;i++) temp[i] = input[i];
         binarySort(input,0,l-1);
         return temp;
     }
@@ -90,7 +89,6 @@ public class SortMethod {
     }
     public void merge(Comparable[] input,int head,int mid,int end) {
         if(head == end) return;
-        for (int i=0;i<input.length;i++) input[i] = temp[i];
         int p1 = head, p2 = mid+1;
         for(int j=head;j<=end;j++){
             if(p1>mid) temp[j] = input[p2++];
@@ -98,6 +96,7 @@ public class SortMethod {
             else if(input[p1].compareTo(input[p2])>-1) temp[j] = input[p2++];
             else temp[j] = input[p1++];
         }
+        for (int i=head;i<=end;i++) input[i] = temp[i];
     }
     //从底至上的归并排序
     public Comparable[] bottom_up_mergeSort(Comparable[] input) {

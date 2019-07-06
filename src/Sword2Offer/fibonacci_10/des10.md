@@ -66,4 +66,22 @@ f(n) = f(n - 1) + f(n - 2)
 f(n) = f(n - 1) + f(n - 2)+···+f(1)
 ``
 
+**题目**
+
+我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。
+请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？
+
+**解答**
+
+<div align="center">
+    <img src="https://github.com/XQLong/java_workplace/blob/master/img/RectangleCover.png"></img>
+</div>
+
+那么对于2*n大小的矩阵可以分为两种情况如上图：
+
+- 第一块竖着放，则剩下的部分覆盖方法数为f(n-1)；
+
+- 第二种第一块横着放，则余下部分覆盖方法为f(n-2)。
+
+所以在n大于2时，可以推导出f(n) = f(n-1)+f(n-2)。
 

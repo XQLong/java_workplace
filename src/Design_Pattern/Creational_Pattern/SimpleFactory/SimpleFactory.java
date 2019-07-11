@@ -1,4 +1,4 @@
-package Design_Pattern.Creational_Pattern;
+package Design_Pattern.Creational_Pattern.SimpleFactory;
 
 import Design_Pattern.Implements.ConcreteProduct1;
 import Design_Pattern.Implements.ConcreteProduct2;

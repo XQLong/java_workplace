@@ -1,4 +1,4 @@
-package Design_Pattern.Creational_Pattern;
+package Design_Pattern.Creational_Pattern.FactoryMethod;
 
 import Design_Pattern.Implements.ConcreteProduct3;
 import Design_Pattern.Interface.Product;

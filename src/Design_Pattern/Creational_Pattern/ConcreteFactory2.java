@@ -6,7 +6,7 @@ import Design_Pattern.Interface.Product;
 /**
  * @Author: xql
  * @Date: Created in 20:38 2019/7/10
- * 工厂方法类中的具体工厂类
+ * 工厂方法模式中的具体工厂类
  */
 public class ConcreteFactory2 extends Factory{
     @Override

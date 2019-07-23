@@ -17,17 +17,15 @@ public class MinNumberInRotateArray1 {
         else if(arr[l]>arr[r]) {
             if(arr[l]>arr[mid]){
                 return binarySearch(arr,l,mid);
-            }else if(arr[l]<arr[mid]){
-                return binarySearch(arr,mid,r);
             }else{
-                return Search(arr,l,r);
+                return binarySearch(arr,mid,r);
             }
         }
         else return Search(arr,l,r);
     }
     public int Search(int[] arr,int l,int r){
         int res = arr[l];
-        for(int i=l;i<r;i++){
+        for(int i=l;i<=r;i++){
             if(arr[i]<res) res = arr[i];
         }
         return res;

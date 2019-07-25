@@ -1,16 +1,9 @@
 package Sword2Offer;
 
-import Sword2Offer.ArrayOfStackPushAndPop_31.ArrayOfStackPushAndPop;
-import Sword2Offer.BinarySearchTreePostTraversal_33.SearchTreePostTraversal;
-import Sword2Offer.BinaryTreePrint_32.BinaryTreePrint;
-import Sword2Offer.MoreThanHalfNum_39.MoreThanHalfNum;
-import Sword2Offer.PrintCharDictionary_38.PrintCharDictionary;
-import Sword2Offer.RandomlinkListCopy_35.RandomLinkListCopy;
-import Sword2Offer.SerializeTreeNode_37.SerializeTreeNode;
-import Sword2Offer.TestInstance.RandomListNode;
 import Sword2Offer.TestInstance.TreeNode;
+import Sword2Offer.minNumberInRotateArray_11.MinNumberInRotateArray1;
+import Sword2Offer.rebuild_binary_tree_7.RebuildBinaryTree;
 
-import java.util.ArrayList;
 import java.util.Stack;
 
 /**
@@ -93,13 +86,13 @@ public class solution {
         int[] arr1 = {1};
         int[] arr2 = {2,1};
         int[] arr3 = {2,3,1};
-        int[] arr4 = {5,6,8,2,3};
-        MinNumberInRotateArray m = new MinNumberInRotateArray();
-        System.out.println(m.minNumberInRotateArray1(arr));
-        System.out.println(m.minNumberInRotateArray1(arr1));
-        System.out.println(m.minNumberInRotateArray1(arr2));
-        System.out.println(m.minNumberInRotateArray1(arr3));
-        System.out.println(m.minNumberInRotateArray1(arr4));*/
+        int[] arr4 = {6,6,6,6,6,7,1};
+        MinNumberInRotateArray1 m = new MinNumberInRotateArray1();
+        System.out.println(m.minNumberInRotateArray(arr));
+        System.out.println(m.minNumberInRotateArray(arr1));
+        System.out.println(m.minNumberInRotateArray(arr2));
+        System.out.println(m.minNumberInRotateArray(arr3));
+        System.out.println(m.minNumberInRotateArray(arr4));*/
 
         //12
         /*char[] arr2 = new String("AAAAAAAAAAAA").toCharArray();
@@ -304,8 +297,138 @@ public class solution {
         System.out.println(list);*/
 
         //39
-        MoreThanHalfNum mfn = new MoreThanHalfNum();
-        mfn.MoreThanHalfNum_Solution1(new int[]{2,2,2,2,2,1,3,4,5});
+        /*MoreThanHalfNum mfn = new MoreThanHalfNum();
+        mfn.MoreThanHalfNum_Solution1(new int[]{2,2,2,2,2,1,3,4,5});*/
+
+        //40
+        /*LeastNumbers leastNumbers = new LeastNumbers();
+        int[] input = {2,345,67,8};
+        ArrayList res = leastNumbers.GetLeastNumbers_Solution(input,5);*/
+
+        //43
+        /*TimesOf1Between1AndN tmb = new TimesOf1Between1AndN();
+        int res = tmb.NumberOf1Between1AndN_Solution(100);*/
+
+        //44
+        /*Solution solution = new Solution();
+        DightAtStringIndex atStringIndex = new DightAtStringIndex();
+        int[] TestArr = {11,44,2345,5676878,345,6788,345346,1145,67,875456,5646878,89845,4788,3455246};
+        for (int i:TestArr){
+            int res1 = solution.getDigitAtIndex(i);     //github解答思路
+            int res2 = atStringIndex.getDigitAtIndex(i);
+            System.out.println("res1:"+res1+"  res2:"+res2);
+            if(res1==res2) System.out.println("right");
+            else System.out.println("error");
+        }*/
+
+        //45
+        /*ArrayToMiniNumber arrayToMiniNumber = new ArrayToMiniNumber();
+        int[] input = new int[]{3334,3,3333332};
+        arrayToMiniNumber.PrintMinNumber(input);*/
+
+        //46
+        /*TransNumberToString tnt = new TransNumberToString();
+        int res = tnt.numDecodings("12258");*/
+
+        //47
+        /*PresentMaxValue pmv = new PresentMaxValue();
+        //int[][] input = {{}};
+        int[][] input = {{1,10,3,8,5,6},{12,2,9,6,7,5},{5,7,4,11,4,6},{3,7,16,5,3,7},{5,7,4,11,1,5},{3,7,16,5,1,5}};
+        pmv.getMost(input);*/
+
+        //48
+        /*LongestSubString lsb = new LongestSubString();
+        String[] strs = {"arabcacfr","dfhs","dsgfuerhfsfgs","sfdjhoisd","aaaaa","adadadsd","adcdcdc","dcvdvcsjea"};
+        for (String s:strs){
+            int res1 = lsb.getLongestSubString(s);
+            int res2 = lsb.longestSubStringWithoutDuplication(s);
+            System.out.print("res1:"+res1+"   res2:"+res2);
+            if(res1==res2) System.out.println("   right");
+            else System.out.println("   wrong");
+        }*/
+
+        //49
+        /*UglyNumber uglyNumber = new UglyNumber();
+        for (int i=0;i<30;i++){
+            int n = uglyNumber.GetUglyNumber_Solution(i);
+            System.out.println(n);
+        }*/
+
+        //51
+        /*ArrayInversePairs aip = new ArrayInversePairs();
+        int[] intput = {1,2,4,3,6,8,1,3,5,7,2,4};
+        aip.InversePairs(intput);*/
+
+        //52
+        /*ListNode pHead1 = new ListNode(1);
+        ListNode p1_2 = new ListNode(2);
+        ListNode p1_3 = new ListNode(3);
+        ListNode p1_2_4 = new ListNode(4);
+        ListNode p1_2_5 = new ListNode(5);
+        ListNode p1_2_6 = new ListNode(6);
+        pHead1.next = p1_2; p1_2.next = p1_3;   p1_3.next = p1_2_4; p1_2_4.next = p1_2_5; p1_2_5.next = p1_2_6;
+        ListNode pHead2 = new ListNode(2);
+        ListNode p2_3 = new ListNode(3);
+        pHead2.next = p2_3; p2_3.next = p1_2_4;
+        FirstCommonListNode fcn = new FirstCommonListNode();
+        fcn.FindFirstCommonNode(pHead1,pHead2);*/
+
+        //53
+        /*int[] input = {3,3,3,3};
+        TimesOfNumberInArray tna = new TimesOfNumberInArray();
+        int res = tna.GetNumberOfK1(input,3);*/
+
+        //54
+        /*TreeNode root = new TreeNode(8);
+        TreeNode left = new TreeNode(6);
+        TreeNode right = new TreeNode(6);
+        TreeNode left1 = new TreeNode(5);
+        TreeNode right1 = new TreeNode(5);
+        TreeNode left2 = new TreeNode(7);
+        TreeNode right2 = new TreeNode(7);
+        root.left =  left;
+        root.right = right;
+        left.left = left1;
+        left.right = right1;
+        left1.left = left2;
+        left1.right = right2;
+        DeepOfBinaryTree dbt = new DeepOfBinaryTree();
+        int res = dbt.TreeDepth(root);*/
+
+        //56
+        /*OnceNumberInArray ona = new OnceNumberInArray();
+        int res = ona.getOnePoint(3);*/
+
+        //57
+        /*ContinuousNumberSum cns = new ContinuousNumberSum();
+        cns.FindContinuousSequence(3);*/
+
+        //58
+        /*ReverseWords rw = new ReverseWords();
+        String res = rw.ReverseSentence1("I am a student");*/
+
+        //59
+        /*MaxInArrayWindow miw = new MaxInArrayWindow();
+        int[] input = {2,3,4,2,6,2,5,1};
+        miw.maxInWindows(input,3);*/
+
+        //60
+        /*SumOfNDice sond = new SumOfNDice();
+        sond.dicesSum(15);*/
+
+        //61
+        /*PokerOrder po = new PokerOrder();
+        int[] input = {0,3,1,6,4};
+        boolean b = po.isContinuous(input);*/
+
+        //62
+        /*LastRemainInCircle lric = new LastRemainInCircle();
+        int res = lric.LastRemaining_Solution(18,6);*/
+
+        //66
+        /*int[] input = {1,2,3,4,5};
+        BuildMultiplyArray bma = new BuildMultiplyArray();
+        int[] res = bma.multiply(input);*/
     }
         //7
         public Stack<TreeNode> addTreeNode(Stack<TreeNode> stack,TreeNode t){

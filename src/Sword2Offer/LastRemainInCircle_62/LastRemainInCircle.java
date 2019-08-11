@@ -11,7 +11,7 @@ public class LastRemainInCircle {
         return (LastRemaining_Solution(n-1,m)+m)%n;
     }
 
-    //硬核沙雕计算
+    //数组模拟计算
     public int LastRemaining_Solution1(int n, int m) {
         if(n<1) return -1;
         if(n==1) return 0;

@@ -4,26 +4,26 @@ package Sword2Offer.repetitive_num_arr_3;
  * Created by xql on 2019/3/21.
  */
 public class Repetitivenum_arr {
-    public int searchnum(int[] arr){
-        for(int i = 0;i<arr.length;i++){
-            while(i!=arr[i]){
-                swapnum(arr,i,arr[i]);
-                for (int a:arr){
-                    System.out.print(a);
+    public boolean duplicate(int numbers[],int length,int [] duplication) {
+        for(int i=0;i<length;i++){
+            if(numbers[i]<i){
+                duplication[0] = numbers[i];
+                return true;
+            }
+            while(i!=numbers[i]){
+                if(numbers[i] == numbers[numbers[i]]) {
+                    duplication[0] = numbers[i];
+                    return true;
                 }
-                System.out.println(" ");
-                if(arr[i]==arr[arr[i]]){
-                    System.out.println("res:"+arr[i]);
-                    return arr[i];
-                }
+                swap(numbers,i,numbers[i]);
             }
         }
-        return 0;
+        return false;
     }
-    public int[] swapnum(int[] arr,int i,int j){
-        arr[i] = arr[i]^arr[j];
-        arr[j] = arr[j]^arr[i];
-        arr[i] = arr[i]^arr[j];
-        return arr;
+    public void swap(int arr[],int l,int r){
+        if(l==r) return;
+        int temp = arr[l];
+        arr[l] = arr[r];
+        arr[r] = temp;
     }
 }

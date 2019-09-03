@@ -2,10 +2,7 @@ package Sword2Offer.BinaryTreePrint_32;
 
 import Sword2Offer.TestInstance.TreeNode;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Created by xql on 2019/4/26.
@@ -114,5 +111,61 @@ public class BinaryTreePrint {
             if(!list.isEmpty()) ret.add(list);
         }
         return ret;
+    }
+
+    /*二叉树的非递归遍历
+    * */
+    //先序遍历
+    public List<Integer> preOrder(TreeNode head) {
+        List<Integer> res = new ArrayList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        if(head==null) return res;
+        TreeNode cur = head;
+        while (cur!=null||stack.size()>0){
+            while (cur!=null){
+                stack.push(cur);
+                res.add(cur.val);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            cur = cur.right;
+        }
+        return res;
+    }
+    //中序遍历
+    public List<Integer> inOrder(TreeNode head) {
+        List<Integer> res = new ArrayList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        if(head==null) return res;
+        TreeNode cur = head;
+        while(cur!=null||stack.size()>0){
+            while (cur!=null){
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            res.add(cur.val);
+            cur = cur.right;
+        }
+        return res;
+    }
+    //后续遍历，使用两个栈
+    public List<Integer> postOrder(TreeNode head) {
+        List<Integer> res = new ArrayList<Integer>();
+        if(head==null) return res;
+        Stack<TreeNode> stack = new Stack<>();
+        Stack<TreeNode> output = new Stack<>();
+        TreeNode cur = head;
+        stack.push(cur);
+       while (stack.size()>0){
+           cur = stack.pop();
+           output.push(cur);
+           if(cur.right!=null) stack.push(cur.right);
+           if(cur.left!=null) stack.push(cur.left);
+       }
+       while (output.size()>0){
+           res.add(output.pop().val);
+       }
+       return res;
     }
 }
